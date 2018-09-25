@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FA4CBAA7-1DB4-4348-87C9-82596248E5F1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IPE.WhiteSmsTPL</RootNamespace>
+    <AssemblyName>IPE.WhiteSmsTPL</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=106.3.1.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.106.3.1\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Consts\Emoji.cs" />
+    <Compile Include="MethodHelper.cs" />
+    <Compile Include="Models\DraftMessages\DraftMessageDetail.cs" />
+    <Compile Include="Models\FAQ\FrequentlyAskedQuestion.cs" />
+    <Compile Include="Models\Messages\MessageId.cs" />
+    <Compile Include="Models\Messages\SentMessage.cs" />
+    <Compile Include="Models\Messages\SentMessageMobileNumber.cs" />
+    <Compile Include="Models\Notification\UserNotification.cs" />
+    <Compile Include="Models\OccasionalMessages\OccasionalMessage.cs" />
+    <Compile Include="Models\OccasionalMessages\OccasionalMessageCategory.cs" />
+    <Compile Include="Models\Ticket\AbstractTicketDetail.cs" />
+    <Compile Include="Models\Ticket\Department.cs" />
+    <Compile Include="Models\Ticket\TicketDetail.cs" />
+    <Compile Include="Models\Ticket\TicketPriority.cs" />
+    <Compile Include="Models\Ticket\TicketReplyDetail.cs" />
+    <Compile Include="Models\Ticket\TicketStatus.cs" />
+    <Compile Include="RequestBodyModel\DraftMessages\AddOrUpdateDraftMessageBodyModel.cs" />
+    <Compile Include="RequestBodyModel\Messages\GroupContactsDistinctCountBodyModel.cs" />
+    <Compile Include="RequestBodyModel\Messages\SendBodyModel.cs" />
+    <Compile Include="RequestBodyModel\Messages\SendByMobileNumbersBodyModel.cs" />
+    <Compile Include="RequestBodyModel\Shared\ContactInfo.cs" />
+    <Compile Include="Responses\DraftMessages\AddOrUpdateDraftMessageResponse.cs" />
+    <Compile Include="Responses\DraftMessages\GetDraftMessagesResponse.cs" />
+    <Compile Include="Responses\FAQ\GetFrequentlyAskedQuestionsResponse.cs" />
+    <Compile Include="Responses\Message\GetLastSentMessagesByPageIdResponse.cs" />
+    <Compile Include="Responses\Message\GetLastSentMessagesFromLastIdResponse.cs" />
+    <Compile Include="Responses\Message\GetSentMessagesMobileNumbersResponse.cs" />
+    <Compile Include="Responses\Message\GroupContactsDistinctCountResponse.cs" />
+    <Compile Include="Responses\Message\SendResponse.cs" />
+    <Compile Include="Responses\Notifications\GetNotificationResponse.cs" />
+    <Compile Include="Responses\OccasionalMessages\GetOccasionalMessageCategoryResponse.cs" />
+    <Compile Include="Responses\OccasionalMessages\GetOccasionalMessagesResponse.cs" />
+    <Compile Include="Responses\Ticket\GetTicketByIdResponse.cs" />
+    <Compile Include="Responses\Ticket\GetTicketPrioritiesAndDepartmentsResponse.cs" />
+    <Compile Include="Responses\Ticket\GetTicketsByPageIdResponse.cs" />
+    <Compile Include="Responses\Ticket\GetTicketsFromLastIdResponse.cs" />
+    <Compile Include="Responses\Ticket\GetTicketStatusResponse.cs" />
+    <Compile Include="Responses\WhiteSms\GetUserInfoResponse.cs" />
+    <Compile Include="Tools\IPERequest.cs" />
+    <Compile Include="Models\Contacts\BaseContactDetail.cs" />
+    <Compile Include="Models\Contacts\CancelledContactDetail.cs" />
+    <Compile Include="Models\Contacts\Contact.cs" />
+    <Compile Include="Models\Contacts\ContactDetail.cs" />
+    <Compile Include="Models\Contacts\ContactDetailByGroupId.cs" />
+    <Compile Include="Models\Contacts\ContactDetailFromLastId.cs" />
+    <Compile Include="Models\Contacts\ContactGroup.cs" />
+    <Compile Include="RequestBodyModel\Contacts\AddOrUpdateContactGroupBodyModel.cs" />
+    <Compile Include="RequestBodyModel\Token\GetTokenBodyModel.cs" />
+    <Compile Include="Models\BankTransaction\Transaction.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RequestBodyModel\Contacts\TransferContactsToGroupBodyModel.cs" />
+    <Compile Include="Responses\Contacts\AddContactsResponse.cs" />
+    <Compile Include="Responses\Contacts\AddOrUpdateContactGroupResponse.cs" />
+    <Compile Include="Responses\BaseResponse.cs" />
+    <Compile Include="Responses\BankTransaction\GetBankTransaction.cs" />
+    <Compile Include="Responses\Contacts\GetCancelledContactsByPageIdResponse.cs" />
+    <Compile Include="Responses\Contacts\GetContactGroupsResponse.cs" />
+    <Compile Include="Responses\Contacts\GetContactsByPageIdResponse.cs" />
+    <Compile Include="Responses\Contacts\GetContactsFromLastIdResponse.cs" />
+    <Compile Include="Responses\Token\GetTokenResponse.cs" />
+    <Compile Include="Responses\Contacts\SearchContactsResponse.cs" />
+    <Compile Include="Responses\Contacts\TransferContactsToGroupResponse.cs" />
+    <Compile Include="Tools\Utility.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
